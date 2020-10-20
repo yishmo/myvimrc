@@ -1,0 +1,41 @@
+colorscheme darkblue " awesome colorscheme
+syntax enable " enables syntax
+set tabstop=4 " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
+set expandtab " tabs are spaces
+set shiftwidth=4 "mass indent is 4 spaces
+set relativenumber " shows realtive line numbers to allow for easier movement
+set number "shows current line number
+set autoindent "makes it so I dont have to indent
+set showcmd " show command in bottom bar
+set background=dark " dark background so vim will correct colorscheme
+set showmatch " show matching paren etc.
+set lazyredraw " good for scrolling faster
+set incsearch "constant search after each char typed
+set hlsearch "hilight matches"
+set clipboard=unnamed "copy to actual clipboard
+set backspace=2
+inoremap jk <esc>
+"maps escape to jk
+inoremap jl <C-x><C-p>
+"autocomplete on jl
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-o> :set nonumber<cr>
+nnoremap <C-b> :set number<cr>
+nnoremap U <C-r>
+set pastetoggle=<F2>
+" Move to the previous buffer with "gp"
+nnoremap gp :bp<CR>
+" Move to the next buffer with "gn"
+nnoremap gn :bn<CR>
+" List all possible buffers with "gl"
+nnoremap gl :ls<CR>
+" List all possible buffers with "gb" and accept a new buffer argument [1]
+nnoremap gb :ls<CR>:b
